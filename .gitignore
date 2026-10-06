@@ -1,0 +1,27 @@
+# Local data, predictions, model weights, credentials and runtime products
+data/
+weights/
+checkpoints/
+runs/
+reports/*
+!reports/README.md
+examples/real_*.csv
+configs/local*.json
+*.pt
+*.pth
+*.ckpt
+*.npz
+*.npy
+*.onnx
+.env
+.env.*
+kaggle.json
+credentials*.json
+*token*.json
+.venv/
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db

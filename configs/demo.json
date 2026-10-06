@@ -1,0 +1,17 @@
+{
+  "title": "植物分类实验对比 · 合成数据演示",
+  "source_kind": "synthetic",
+  "scope": "同一批 25 条合成预测 · 演示划分",
+  "models": [
+    {
+      "name": "演示方案 A",
+      "path": "../examples/demo_a.csv",
+      "note": "人工构造的预测：15/25 正确。不是 EfficientNet 或任何真实模型成绩。"
+    },
+    {
+      "name": "演示方案 B",
+      "path": "../examples/demo_b.csv",
+      "note": "人工构造的预测：18/25 正确。仅用于演示指标与错例变化。"
+    }
+  ]
+}

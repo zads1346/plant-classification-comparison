@@ -1,0 +1,33 @@
+Validation status — 2026-10-05
+
+PASSED HERE
+- Read all four cells and preserved text outputs of the uploaded notebook.
+- Independently reviewed original checkpoint, OOF, TTA, calibration, pseudo-label and submission paths.
+- Verified competition evaluation formula with browser-rendered official page: F1_micro.
+- Python syntax compilation; standalone script / embedded Notebook implementation parity.
+- Executed Notebook definition and synthetic self-test cells.
+- Pretrained policy gate rejects unconfirmed use and accepts explicit approved/scratch choices.
+- Extreme-aspect-ratio (1x1000 and 1000x1) letterbox regression checks.
+- Synthetic PNG data audit: five classes, class mapping, template order, exact pixel-hash duplicates.
+- StratifiedKFold coverage/disjointness and StratifiedGroupKFold duplicate separation.
+- Explicit specimen-group / pixel-duplicate union behavior.
+- Deterministic evaluation preprocessing; training and evaluation array shape/finite values.
+- Invalid probability rejection and valid class decoding.
+- Atomic CSV output and exact read-back of ID/Category.
+
+STATIC REVIEW PASSED
+- Matching per-epoch validation, checkpoint reload, OOF and test policies.
+- Model head replacement, optimizer groups, unfreezing and EMA state flow.
+- Resume identity includes data/config/dependencies/local pretrained-file hashes.
+- AMP scaler has modern and legacy API paths.
+
+NOT RUN HERE
+- Torch/torchvision imports and instantiated pretrained model forward/backward.
+- Included optional torch_smoke_test(); this environment has no torch installed.
+- Real-data training, CUDA/AMP execution, GPU memory or runtime measurements.
+- New Kaggle submission or any actual accuracy improvement.
+- Test ground-truth evaluation; labels were not obtained.
+
+Synthetic tests are software checks, not competition accuracy evidence.
+The notebook is distributed with empty outputs/execution counts so it cannot be confused with a trained run.
+Pretrained usage is gated pending confirmation of organizer rules.

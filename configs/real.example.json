@@ -1,0 +1,17 @@
+{
+  "title": "植物分类实验对比",
+  "source_kind": "validation",
+  "scope": "同一验证样本与折划分；填写 partial OOF 或 full OOF 及覆盖数",
+  "models": [
+    {
+      "name": "实际运行 A（自行命名）",
+      "path": "../examples/real_a.csv",
+      "note": "填写架构、图像尺寸、TTA 与来源；保留完整运行配置"
+    },
+    {
+      "name": "实际运行 B（自行命名）",
+      "path": "../examples/real_b.csv",
+      "note": "必须与 A 使用相同真实标签、样本集合与折划分"
+    }
+  ]
+}

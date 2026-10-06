@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<title>植物分类实验对比 · 离线预览</title>
+<style>
+:root{--ink:#183c31;--muted:#67796b;--line:#dce3d9;--paper:#f4f5ed;--white:#fffef9;--green:#246b50;--mint:#e1ecda;--amber:#a36521;--amberbg:#fff0d2;--red:#a15444}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans CJK SC","Microsoft YaHei",sans-serif;font-size:14px;line-height:1.6}button,input,select{font:inherit}button,select{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #8eaf93;outline-offset:3px}a{color:var(--green)}.shell{max-width:1260px;margin:auto;padding:24px 38px 40px}.top{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:20px;gap:15px}.brand{font-weight:750;font-size:17px;display:flex;gap:11px;align-items:center}.leaf{width:29px;height:29px;display:grid;place-items:center;background:var(--ink);color:var(--paper);border-radius:9px}.topmeta{font-size:12px;color:var(--muted);text-align:right}.pill{display:inline-block;padding:3px 10px;border-radius:30px;background:var(--mint);font-size:11px;font-weight:650;letter-spacing:.05em}.hero{display:grid;grid-template-columns:1fr auto;align-items:end;gap:28px;padding:31px 0 24px}.eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--green);font-weight:700}h1{font-size:34px;line-height:1.35;letter-spacing:-.035em;margin:9px 0 10px;font-weight:760}h2{font-size:18px;margin:0;font-weight:740}h3{font-size:15px;margin:0 0 7px}.sub{margin:0;color:var(--muted);max-width:760px;font-size:13px}.summary{display:flex;gap:29px}.summary b{font-size:26px;display:block;line-height:1.3;font-weight:600}.summary span{font-size:11px;color:var(--muted)}.notice{background:var(--amberbg);border:1px solid #edd7aa;border-radius:10px;padding:13px 17px;color:#775122;display:flex;gap:13px;align-items:center;margin-bottom:22px}.notice strong{white-space:nowrap;font-size:12px}.notice p{font-size:12px;margin:0}.tabs{display:flex;gap:7px;margin-bottom:20px}.tabs button{border:0;background:transparent;color:var(--muted);padding:9px 17px;border-radius:8px;font-weight:650}.tabs button.active{color:var(--white);background:var(--ink)}.sectionline{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;gap:15px}.fine{color:var(--muted);font-size:11px}.tag{border:1px solid var(--line);padding:4px 9px;border-radius:6px;font-size:11px;color:var(--muted)}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-bottom:24px}.card{border:1px solid var(--line);border-radius:13px;background:var(--white);padding:20px 22px;position:relative;overflow:hidden}.cardhead{display:flex;justify-content:space-between;gap:12px;align-items:center}.modelname{font-size:14px;font-weight:700}.demo{font-size:10px;white-space:nowrap;color:var(--amber);background:var(--amberbg);padding:3px 7px;border-radius:4px}.metrics{display:grid;grid-template-columns:1.3fr 1fr 1fr;align-items:end;margin:18px 0 12px;gap:12px}.metriclabel{font-size:11px;color:var(--muted);display:block}.big{font-size:38px;line-height:1.3;letter-spacing:-.045em;font-weight:600}.mid{font-size:24px;font-weight:600;line-height:1.4}.bar{height:5px;background:#e9eee4;border-radius:3px;margin-top:8px;overflow:hidden}.bar i{display:block;height:100%;background:var(--green)}.cardnote{font-size:11px;color:var(--muted);margin-top:13px;padding-top:11px;border-top:1px solid #edf0e8}.grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;margin-bottom:23px}.panel{background:var(--white);border:1px solid var(--line);border-radius:13px;padding:20px 22px;min-width:0}.panelhead{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;margin-bottom:16px}.panelhead p{margin:3px 0 0}.select{border:1px solid var(--line);color:var(--ink);background:var(--paper);border-radius:6px;padding:6px 8px;max-width:230px;font-size:11px}.matrixwrap{overflow-x:auto}.matrix{border-collapse:separate;border-spacing:5px;width:100%;font-size:12px;table-layout:fixed}.matrix th{font-weight:500;font-size:10px;color:var(--muted);line-height:1.25}.matrix th:first-child{width:112px}.matrix td{text-align:center;font-size:17px;font-weight:600;height:38px;border-radius:5px}.matrix th.rowlabel{text-align:right;padding-right:6px}.axis{font-size:10px;color:var(--muted);margin-bottom:7px}.legend{display:flex;justify-content:space-between;font-size:10px;color:var(--muted);margin-top:11px;gap:8px}.legend i{display:inline-block;width:10px;height:10px;margin-right:5px;border-radius:2px;vertical-align:middle;background:#a6c7a1}.perclass{width:100%;border-collapse:collapse;font-size:12px}.perclass th{text-align:left;color:var(--muted);font-weight:500;font-size:10px;padding:0 0 12px;border-bottom:1px solid var(--line)}.perclass td{padding:12px 0;border-bottom:1px solid #edf0e8}.perclass td:last-child,.perclass th:last-child{text-align:right}.smallbar{display:inline-block;width:54px;height:4px;background:#e4ebdd;vertical-align:middle;margin-right:8px}.smallbar i{height:100%;display:block;background:var(--green)}.perfoot{font-size:10px;color:var(--muted);margin:15px 0 0}.errorhead{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}.controls{display:flex;gap:9px;align-items:center;flex-wrap:wrap}.search{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:7px 10px;width:190px;font-size:11px;color:var(--ink)}.errtable{width:100%;border-collapse:collapse;font-size:12px}.errtable th{text-align:left;font-size:10px;font-weight:500;color:var(--muted);padding:8px 7px 11px;border-bottom:1px solid var(--line)}.errtable td{padding:10px 7px;border-bottom:1px solid #edf0e8}.id{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:11px}.wrong{color:var(--red)}.empty{padding:30px;text-align:center;color:var(--muted)}.errorfoot{font-size:10px;color:var(--muted);margin-top:12px}.footer{display:flex;justify-content:space-between;gap:22px;font-size:10px;color:var(--muted);padding:22px 0 0}.packagegrid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.packagegrid li{margin-bottom:10px;color:var(--muted);font-size:13px}.packagegrid ul{padding-left:19px}.code{white-space:pre-wrap;overflow-wrap:anywhere;background:#edf1e6;border-radius:9px;padding:15px;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:12px;line-height:1.8}.check{font-size:11px;color:var(--green);font-weight:650}.packagewide{grid-column:1/-1}.phase{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.phase p{font-size:12px;color:var(--muted);margin-bottom:0}[hidden]{display:none!important}.printonly{display:none}@media(max-width:850px){.shell{padding:19px 20px}.hero{grid-template-columns:1fr}.summary{gap:35px}h1{font-size:29px}.grid{grid-template-columns:1fr}.packagegrid{grid-template-columns:1fr}.packagewide{grid-column:auto}.notice{align-items:flex-start}.topmeta{font-size:10px}.cards{gap:12px}.card{padding:17px}.big{font-size:31px}.mid{font-size:22px}.metrics{gap:8px}.cardhead{align-items:flex-start;flex-direction:column;gap:5px}.phase{grid-template-columns:1fr}.errorhead{align-items:flex-start;flex-direction:column}}@media(max-width:500px){.cards{grid-template-columns:1fr}.top{align-items:flex-start}.brand{font-size:15px}.topmeta{max-width:112px}.notice{flex-direction:column;gap:5px}.panel{padding:17px 14px}.matrix th:first-child{width:84px}.matrix td{height:32px}.matrix{border-spacing:3px}.panelhead{flex-direction:column;gap:10px}.errorwrap{overflow:auto}.errtable{min-width:620px}.footer{flex-direction:column;gap:7px}.select{max-width:100%}.hero{padding-top:24px}.controls{width:100%}.search{flex:1;min-width:130px}.summary b{font-size:23px}}@media print{body{background:white}.shell{max-width:none;padding:0}.tabs,.controls{display:none}.card,.panel,.notice{break-inside:avoid}.printonly{display:block}.footer{font-size:9px}}
+</style>
+</head>
+<body>
+<div class="shell">
+ <header class="top"><div class="brand"><span class="leaf" aria-hidden="true">↗</span>植物分类 · 实验对比</div><div class="topmeta">离线报告预览 <span class="pill">v0.1</span><br>读取预测结果 · 不执行模型训练</div></header>
+ <section class="hero"><div><div class="eyebrow">Plant classification / experiment review</div><h1>让每次实验，都能清楚地比较。</h1><p class="sub">同一验证集上的指标、逐类表现与错误样本。先看清差异，再决定下一次实验。</p></div><div class="summary"><div><b>5</b><span>植物类别</span></div><div><b id="sampleCount">—</b><span id="sampleLabel">样本</span></div><div><b id="modelCount">—</b><span>对比方案</span></div></div></section>
+ <aside class="notice" role="note"><strong id="noticeTitle">数据说明</strong><p id="noticeText"></p></aside>
+ <nav class="tabs" aria-label="页面内容"><button id="reportTab" class="active" aria-pressed="true">对比报告</button><button id="packageTab" aria-pressed="false">项目怎么打包</button></nav>
+ <main>
+  <div id="reportPane">
+   <div class="sectionline"><h2>实验概览</h2><span class="tag" id="scope"></span></div>
+   <div class="cards" id="cards"></div>
+   <div class="grid">
+    <section class="panel"><div class="panelhead"><div><h2>混淆矩阵</h2><p class="fine">查看当前方案容易混淆的类别</p></div><label><span class="fine">方案 </span><select id="modelSelect" class="select" aria-label="选择查看的方案"></select></label></div><div class="axis">行 = 真实类别 / 列 = 预测类别 · 单位：样本数</div><div id="matrix" class="matrixwrap"></div><div class="legend"><span><i></i>对角线是预测正确的样本</span><span id="matrixNote"></span></div></section>
+    <section class="panel"><div class="panelhead"><div><h2>逐类表现</h2><p class="fine" id="classSubtitle"></p></div><span class="tag">固定 5 类</span></div><table class="perclass"><thead><tr><th>类别</th><th>F1</th><th>召回率</th><th>样本</th></tr></thead><tbody id="perClass"></tbody></table><p class="perfoot">macro-F1 对 5 类等权平均；缺失类别按 F1=0 处理。micro-F1 在本单标签任务中等于 accuracy。</p></section>
+   </div>
+   <section class="panel"><div class="errorhead"><div><h2>错误样本明细 <span class="fine" id="errorCount"></span></h2><p class="fine" style="margin:3px 0 0">只列当前方案的错例，可按 ID 或类别查找</p></div><div class="controls"><input type="search" id="search" class="search" aria-label="查找错误样本" placeholder="查找 ID 或类别…"><select class="select" id="classFilter" aria-label="按真实类别筛选"><option value="">全部真实类别</option></select></div></div><div class="errorwrap"><table class="errtable"><thead><tr><th>样本 ID</th><th>真实类别</th><th>当前方案预测</th><th>另一方案预测</th><th>对比</th></tr></thead><tbody id="errors"></tbody></table></div><div id="noErrors" class="empty" hidden>没有符合筛选条件的错例。</div><p class="errorfoot" id="errorFoot"></p></section>
+  </div>
+  <div id="packagePane" hidden>
+   <div class="sectionline"><h2>建议交付：源码仓库 + 一页离线预览</h2><span class="tag">公开源码预览版</span></div>
+   <div class="packagegrid">
+    <section class="panel"><h3>仓库结构</h3><div class="code">plant-classification-comparison/
+├── README.md              项目说明与运行步骤
+├── train/                 已有训练脚本、Notebook
+├── eval/                  预测导入与对比报告生成
+├── configs/               演示 / 真实结果配置示例
+├── examples/              明确标记的合成 CSV
+├── preview/               可直接打开的离线报告
+├── reports/               本地报告输出（默认忽略）
+├── tests/                 指标与输入校验测试
+└── docs/                  数据格式、边界和验证记录</div></section>
+    <section class="panel"><h3>README 可以这样介绍</h3><p style="font-size:14px;line-height:1.9">这是一个面向五类植物图像分类的实验复现与结果对比项目。已有训练代码支持单折快速验证和双架构五折流程；离线报告工具比较同一验证集上的指标、混淆矩阵与错误样本。</p><div class="notice" style="margin:15px 0 0"><p>当前页面使用合成预测演示功能。尚无本次新训练成绩，不能据此声称某个模型更准确。</p></div></section>
+    <section class="panel packagewide"><div class="phase"><div><span class="check">已有训练源码</span><h3>保留可追溯的实现</h3><p>EfficientNet-B2 fast 单折；full 为 EfficientNet-B2 + ConvNeXt-Tiny 五折。训练仍须数据、GPU 环境和预训练许可。</p></div><div><span class="check">本次可运行预览</span><h3>先把结果比较做实</h3><p>读取 CSV → 检查同一批样本与折划分 → 计算指标 → 生成本地 HTML。无需联网或安装前端依赖。</p></div><div><span class="check">后续可选扩展</span><h3>等真实输出再完善</h3><p>错例原图、训练曲线整合、一键实验管理或桌面程序。它们不是当前已实现功能。</p></div></div></section>
+    <section class="panel"><h3>最快预览方式</h3><ul><li>解压 ZIP，双击 preview/index.html</li><li>切换方案，检查矩阵和逐类 F1</li><li>筛选错误样本，试读项目说明</li></ul><div class="code">python eval/compare.py --config configs/demo.json --output reports/demo</div><p class="fine">上面的命令只重新生成合成演示报告，不运行训练。</p></section>
+    <section class="panel"><h3>公开前要确认</h3><ul><li>课程是否允许公开代码和使用预训练权重</li><li>数据、权重、API 密钥与真实预测不进仓库</li><li>许可证由项目所有者决定</li><li>真实成绩附验证范围、数据来源和运行配置</li></ul><p class="fine">分享源码不需要先做 EXE。当前源代码包适合审阅和后续建仓。</p></section>
+   </div>
+  </div>
+ </main>
+ <footer class="footer"><span id="footerData"></span><span>全部计算与交互在本地完成 · 无外部资源请求</span></footer>
+</div>
+<script id="report-data" type="application/json">__REPORT_JSON__</script>
+<script>
+'use strict';
+const DATA=JSON.parse(document.getElementById('report-data').textContent);
+const byId=id=>document.getElementById(id), percent=v=>(v*100).toFixed(1)+'%';
+function node(tag,text,cls){const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(cls)e.className=cls;return e;}
+const synthetic=DATA.source_kind==='synthetic';
+byId('noticeTitle').textContent=synthetic?'合成数据演示 · 非训练成绩':'验证数据报告 · 非测试集成绩';
+byId('noticeText').textContent=DATA.caveat;
+byId('sampleCount').textContent=DATA.models[0].metrics.n;
+byId('sampleLabel').textContent=synthetic?'合成样本':'验证样本';
+byId('modelCount').textContent=DATA.models.length;
+byId('scope').textContent=DATA.scope;
+byId('footerData').textContent=synthetic?'演示数据 / 所有 ID 和预测均为人工构造':'用户提供的验证预测 / 来源与训练隔离需独立核验';
+byId('errorFoot').textContent=synthetic?'这里的样本 ID 与预测均为合成夹具，没有真实植物图片。错例图片查看尚未实现。':'这里只展示输入 CSV 中的样本标识与预测，没有嵌入真实图片。公开此报告前请检查样本路径是否敏感。';
+DATA.models.forEach((m,i)=>{
+ const c=node('article',undefined,'card'),h=node('div',undefined,'cardhead');
+ h.append(node('span',m.name,'modelname'),node('span',synthetic?'合成预测':'验证预测','demo'));c.append(h);
+ const ms=node('div',undefined,'metrics');
+ for(const [label,value,cl] of [['micro-F1 / accuracy',percent(m.metrics.micro_f1),'big'],['macro-F1',percent(m.metrics.macro_f1),'mid'],['错误样本',m.metrics.errors+' / '+m.metrics.n,'mid']]){
+  const d=node('div');d.append(node('span',label,'metriclabel'),node('div',value,cl));ms.append(d);
+ }
+ c.append(ms);const bar=node('div',undefined,'bar'), fill=node('i');fill.style.width=percent(m.metrics.accuracy);bar.append(fill);c.append(bar,node('div',m.note||DATA.caveat,'cardnote'));byId('cards').append(c);
+ const o=node('option',m.name);o.value=i;byId('modelSelect').append(o);
+});
+DATA.classes.forEach(c=>{const o=node('option',c);o.value=c;byId('classFilter').append(o);});
+const shorts=['Black-grass','Common wheat','Loose Silky-bent','Scentless Mayweed','Sugar beet'];
+function renderDetails(){
+ const m=DATA.models[Number(byId('modelSelect').value)],cm=m.metrics.confusion_matrix;
+ byId('matrix').replaceChildren();const t=node('table',undefined,'matrix');t.setAttribute('aria-label',m.name+' 混淆矩阵');
+ const head=node('thead'),hr=node('tr');hr.append(node('th','真实 ↓ / 预测 →'));shorts.forEach(s=>hr.append(node('th',s)));head.append(hr);t.append(head);
+ const body=node('tbody'),max=Math.max(1,...cm.flat());cm.forEach((row,i)=>{const tr=node('tr'),th=node('th',shorts[i],'rowlabel');th.scope='row';tr.append(th);row.forEach((n,j)=>{const td=node('td',n);td.style.background=i===j?'rgba(87,143,77,'+(0.10+0.40*n/max)+')':'rgba(205,174,125,'+(0.07+0.30*n/max)+')';td.title=DATA.classes[i]+' → '+DATA.classes[j]+': '+n;tr.append(td);});body.append(tr);});t.append(body);byId('matrix').append(t);
+ byId('matrixNote').textContent=(synthetic?'合成样本 ':'验证样本 ')+m.metrics.n+' 条';
+ byId('classSubtitle').textContent=m.name;
+ byId('perClass').replaceChildren();m.metrics.per_class.forEach(c=>{const tr=node('tr');tr.append(node('td',c.name));const score=node('td'),bar=node('span',undefined,'smallbar'),fill=node('i');fill.style.width=percent(c.f1);bar.append(fill);score.append(bar,node('span',percent(c.f1)));tr.append(score,node('td',percent(c.recall)),node('td',c.support));byId('perClass').append(tr);});renderErrors();
+}
+function renderErrors(){
+ const i=Number(byId('modelSelect').value),m=DATA.models[i],other=DATA.models[(i+1)%DATA.models.length],lookup=new Map(other.rows.map(r=>[r.ID,r]));
+ const q=byId('search').value.toLowerCase().trim(),cl=byId('classFilter').value;
+ const all=m.rows.filter(r=>r.true_label!==r.pred_label),filtered=all.filter(r=>(!cl||r.true_label===cl)&&(!q||[r.ID,r.true_label,r.pred_label].some(v=>v.toLowerCase().includes(q))));
+ byId('errors').replaceChildren();filtered.forEach(r=>{const tr=node('tr'),o=lookup.get(r.ID);tr.append(node('td',r.ID,'id'),node('td',r.true_label),node('td',r.pred_label,'wrong'),node('td',o.pred_label),node('td',o.pred_label===o.true_label?'另一方案正确':'两者均错',o.pred_label===o.true_label?'':'wrong'));byId('errors').append(tr);});
+ byId('errorCount').textContent=filtered.length+' / '+all.length+' 条';byId('noErrors').hidden=filtered.length!==0;
+ document.querySelectorAll('.errtable th')[3].textContent=other.name+' 预测';
+}
+byId('modelSelect').addEventListener('change',renderDetails);byId('search').addEventListener('input',renderErrors);byId('classFilter').addEventListener('change',renderErrors);
+function tab(packageView){byId('reportPane').hidden=packageView;byId('packagePane').hidden=!packageView;for(const [id,on] of [['reportTab',!packageView],['packageTab',packageView]]){byId(id).classList.toggle('active',on);byId(id).setAttribute('aria-pressed',String(on));}}
+byId('reportTab').addEventListener('click',()=>tab(false));byId('packageTab').addEventListener('click',()=>tab(true));renderDetails();
+</script>
+</body>
+</html>

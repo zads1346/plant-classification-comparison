@@ -1,0 +1,26 @@
+ID,true_label,pred_label,fold,split_id,source_kind
+synthetic_001.png,Black-grass,Black-grass,demo-0,synthetic-fixed-split-25,synthetic
+synthetic_002.png,Black-grass,Common wheat,demo-0,synthetic-fixed-split-25,synthetic
+synthetic_003.png,Black-grass,Black-grass,demo-0,synthetic-fixed-split-25,synthetic
+synthetic_004.png,Black-grass,Black-grass,demo-0,synthetic-fixed-split-25,synthetic
+synthetic_005.png,Black-grass,Black-grass,demo-0,synthetic-fixed-split-25,synthetic
+synthetic_006.png,Common wheat,Common wheat,demo-0,synthetic-fixed-split-25,synthetic
+synthetic_007.png,Common wheat,Black-grass,demo-0,synthetic-fixed-split-25,synthetic
+synthetic_008.png,Common wheat,Common wheat,demo-0,synthetic-fixed-split-25,synthetic
+synthetic_009.png,Common wheat,Common wheat,demo-0,synthetic-fixed-split-25,synthetic
+synthetic_010.png,Common wheat,Common wheat,demo-0,synthetic-fixed-split-25,synthetic
+synthetic_011.png,Loose Silky-bent,Black-grass,demo-0,synthetic-fixed-split-25,synthetic
+synthetic_012.png,Loose Silky-bent,Loose Silky-bent,demo-0,synthetic-fixed-split-25,synthetic
+synthetic_013.png,Loose Silky-bent,Loose Silky-bent,demo-0,synthetic-fixed-split-25,synthetic
+synthetic_014.png,Loose Silky-bent,Loose Silky-bent,demo-0,synthetic-fixed-split-25,synthetic
+synthetic_015.png,Loose Silky-bent,Loose Silky-bent,demo-0,synthetic-fixed-split-25,synthetic
+synthetic_016.png,Scentless Mayweed,Sugar beet,demo-0,synthetic-fixed-split-25,synthetic
+synthetic_017.png,Scentless Mayweed,Scentless Mayweed,demo-0,synthetic-fixed-split-25,synthetic
+synthetic_018.png,Scentless Mayweed,Scentless Mayweed,demo-0,synthetic-fixed-split-25,synthetic
+synthetic_019.png,Scentless Mayweed,Scentless Mayweed,demo-0,synthetic-fixed-split-25,synthetic
+synthetic_020.png,Scentless Mayweed,Scentless Mayweed,demo-0,synthetic-fixed-split-25,synthetic
+synthetic_021.png,Sugar beet,Scentless Mayweed,demo-0,synthetic-fixed-split-25,synthetic
+synthetic_022.png,Sugar beet,Common wheat,demo-0,synthetic-fixed-split-25,synthetic
+synthetic_023.png,Sugar beet,Sugar beet,demo-0,synthetic-fixed-split-25,synthetic
+synthetic_024.png,Sugar beet,Sugar beet,demo-0,synthetic-fixed-split-25,synthetic
+synthetic_025.png,Sugar beet,Loose Silky-bent,demo-0,synthetic-fixed-split-25,synthetic
